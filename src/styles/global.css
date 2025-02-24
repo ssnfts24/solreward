@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Import Pixelated Font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* 🎨 Darker Solana Theme */
+:root {
+  --background-light: #0e0e0e;
+  --foreground-light: #e0e0e0;
+  --background-dark: #090909;
+  --foreground-dark: #ffffff;
+
+  /* 🌌 Solana Pixel Colors */
+  --gradient-start: #00d084;
+  --gradient-mid: #7a1aff;
+  --gradient-end: #9d00ff;
+}
+
+/* 🔥 Dark Mode Settings */
+body {
+  color: var(--foreground-dark);
+  background: var(--background-dark);
+  font-family: 'VT323', monospace;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🔆 Light Mode Support */
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--foreground-light);
+    background: var(--background-light);
+  }
+}
+
+/* 🌟 Global Settings */
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 🎮 Base Font (No Pixel Effect by Default) */
+.base-text {
+  font-family: 'VT323', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 💥 Pixelated Hover Effect */
+.pixel-hover:hover {
+  text-shadow: 4px 4px 0px var(--gradient-start), -4px -4px 0px var(--gradient-end);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+/* 🔥 Pixel Borders (8-bit UI Feel) */
+.pixel-border {
+  box-shadow: 4px 4px 0px #7a1aff, -4px -4px 0px #00d084, 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔥 Background Glitch Effect */
+@keyframes glitch {
+  0% { background-position: 0% 50%; opacity: 1; }
+  20% { background-position: 5% 55%; opacity: 0.95; }
+  40% { background-position: -5% 45%; opacity: 1; }
+  60% { background-position: 3% 52%; opacity: 0.98; }
+  80% { background-position: -3% 48%; opacity: 1; }
+  100% { background-position: 0% 50%; opacity: 1; }
+}
+
+/* Apply the glitch effect */
+.glitch-bg {
+  animation: glitch 3s infinite linear alternate;
+  background-image: url('/Banner.png');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+/* 🔥 Text Glitch Animation */
+@keyframes text-glitch {
+  0% { transform: translate(0); opacity: 1; }
+  20% { transform: translate(-2px, 2px) skew(-1deg); opacity: 0.95; }
+  40% { transform: translate(2px, -2px) skew(1deg); opacity: 1; }
+  60% { transform: translate(-1px, -1px) skew(-1deg); opacity: 0.98; }
+  80% { transform: translate(1px, 1px) skew(1deg); opacity: 1; }
+  100% { transform: translate(0); opacity: 1; }
+}
+
+/* Apply Glitch Effect to Text */
+.glitch-text:hover {
+  animation: text-glitch 1.5s infinite ease-in-out alternate;
+}
+
+/* 💡 Pixelated Light Flicker Effect */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+.flicker-effect:hover {
+  animation: flicker 1.5s infinite ease-in-out;
+}
+
+/* 🚀 Retro Pixel Button */
+.pixel-btn {
+  font-family: 'VT323', monospace;
+  background: linear-gradient(90deg, #7a1aff, #00d084);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  transition: all 0.3s ease-in-out;
+  border: 3px solid #7a1aff;
+}
+
+.pixel-btn:hover {
+  background: linear-gradient(90deg, #00d084, #7a1aff);
+  transform: scale(1.08);
+}
+
+/* ✅ Navigation Bar Enhancements */
+.navbar {
+  font-size: 1.5rem; /* ✅ Bigger font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔥 Glitch Hover Effect */
+.navbar-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-link:hover {
+  color: var(--gradient-start);
+  animation: text-glitch 0.8s infinite alternate;
+}
+
+/* 🔥 Neon Glow Effect on Hover */
+.navbar-link:hover {
+  text-shadow: 0px 0px 10px var(--gradient-start), 0px 0px 18px var(--gradient-end);
+}
+
+/* 🔥 Expanding Underline Effect */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-end);
+  transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ✅ Adjust Logo Size for Different Screens */
+@media (max-width: 768px) {
+  .navbar img {
+    height: 50px;
+    width: auto;
+  }
+}
+
+/* 🚀 Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
+  }
+
+  .navbar-link {
+    font-size: 1.1rem;
+  }
+}
+/* Ensure body doesn't cut off sections */
+body {
+  padding-top: 100px; /* Adjust based on navbar height */
+}
