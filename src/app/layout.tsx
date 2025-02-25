@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="application-name" content="SOLREWARD" />
         <meta name="theme-color" content="#090909" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/Logo.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* ✅ Open Graph / Facebook */}

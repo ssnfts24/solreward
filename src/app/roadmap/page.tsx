@@ -41,7 +41,7 @@ const roadmapData = [
     phase: "Phase 4",
     title: "Ecosystem Expansion",
     details: [
-      "🔹 Introduce **SolRewards Marketplace** for trading",
+      "🔹 Introduce **SolReward Marketplace** for trading",
       "🔹 Governance voting integration (DAO decision-making)",
       "🔹 Partner with Solana-based DeFi platforms",
       "🔹 Explore **cross-chain compatibility** for SOLR",
@@ -54,20 +54,20 @@ export default function Roadmap() {
   return (
     <>
       <Head>
-        <title>🚀 SOLREWARD Roadmap 2024 | Token Growth & Expansion</title>
+        <title>SOLREWARD Roadmap 2025 | Token Growth & Expansion</title>
         <meta
           name="description"
-          content="Explore the official SOLREWARD roadmap for 2024 & beyond. See our plans for token growth, security enhancements, staking, and ecosystem expansion."
+          content="Explore the official SOLREWARD roadmap for 2025 & beyond. See our plans for token growth, security enhancements, staking, and ecosystem expansion."
         />
         <meta name="keywords" content="Solana, Crypto, SOLREWARD, Staking, DeFi, Blockchain, Roadmap, Passive Income" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="🚀 SOLREWARD Roadmap 2024" />
+        <meta property="og:title" content=" SOLREWARD Roadmap 2025" />
         <meta property="og:description" content="See the future plans for SOLREWARD, including staking, security updates, and ecosystem expansion." />
         <meta property="og:image" content="https://solreward.com/meta-roadmap.png" />
         <meta property="og:url" content="https://solreward.com/roadmap" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🚀 SOLREWARD Roadmap 2024" />
+        <meta name="twitter:title" content=" SOLREWARD Roadmap 2025" />
         <meta name="twitter:description" content="Learn about the SOLREWARD token roadmap and upcoming developments." />
         <meta name="twitter:image" content="https://solreward.com/meta-roadmap.png" />
         <link rel="canonical" href="https://solreward.com/roadmap" />
@@ -82,7 +82,7 @@ export default function Roadmap() {
       >
         {/* 🔥 Title */}
         <h1 className="text-4xl md:text-5xl font-bold text-center pixel-hover text-green-400 mb-16">
-          🚀 SOLREWARD Roadmap 2024 & Beyond
+           SOLREWARD Roadmap 2024 & Beyond
         </h1>
 
         {/* 🛤️ Roadmap Timeline */}

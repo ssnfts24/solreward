@@ -60,7 +60,7 @@ export default function Roadmap() {
     >
       {/* 🔥 Title */}
       <h2 className="text-4xl md:text-5xl font-bold text-center pixel-hover text-green-400 mb-16">
-        🚀 SolRewards Roadmap 2024 & Beyond
+         SolReward Roadmap 2025 & Beyond
       </h2>
 
       {/* 🛤️ Roadmap Timeline */}

@@ -9,7 +9,7 @@
 :root {
   --background-light: #0e0e0e;
   --foreground-light: #e0e0e0;
-  --background-dark: #090909;
+  --background-dark: #020202;
   --foreground-dark: #ffffff;
 
   /* 🌌 Solana Pixel Colors */
@@ -18,11 +18,18 @@
   --gradient-end: #9d00ff;
 }
 
-/* 🔥 Dark Mode Settings */
+/* 🔥 Dark Mode Settings with Animated Background */
+@keyframes background-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 body {
   color: var(--foreground-dark);
-  background: var(--background-dark);
+  background: radial-gradient(circle at top, #010101, #000000 70%);
   font-family: 'VT323', monospace;
+  animation: background-flow 15s infinite linear;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -45,7 +52,7 @@ html {
   padding: 0 1rem;
 }
 
-/* 🎮 Base Font (No Pixel Effect by Default) */
+/* 🎮 Base Font (Clean, Retro-Inspired) */
 .base-text {
   font-family: 'VT323', monospace;
   text-transform: uppercase;
@@ -61,76 +68,48 @@ html {
   transition: text-shadow 0.3s ease-in-out;
 }
 
-/* 🔥 Pixel Borders (8-bit UI Feel) */
+/* 🔥 Stronger Pixel Borders */
 .pixel-border {
-  box-shadow: 4px 4px 0px #7a1aff, -4px -4px 0px #00d084, 6px 6px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 6px 6px 0px #7a1aff, -6px -6px 0px #00d084, 8px 8px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* 🔥 Background Glitch Effect */
-@keyframes glitch {
-  0% { background-position: 0% 50%; opacity: 1; }
-  20% { background-position: 5% 55%; opacity: 0.95; }
-  40% { background-position: -5% 45%; opacity: 1; }
-  60% { background-position: 3% 52%; opacity: 0.98; }
-  80% { background-position: -3% 48%; opacity: 1; }
-  100% { background-position: 0% 50%; opacity: 1; }
+/* 🔥 Neon Pulsing Glow Effect */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 10px var(--gradient-start); }
+  50% { box-shadow: 0 0 20px var(--gradient-mid); }
+  100% { box-shadow: 0 0 10px var(--gradient-end); }
 }
 
-/* Apply the glitch effect */
-.glitch-bg {
-  animation: glitch 3s infinite linear alternate;
-  background-image: url('/Banner.png');
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.9);
+.glow-effect:hover {
+  animation: pulse-glow 1.5s infinite alternate;
 }
 
-/* 🔥 Text Glitch Animation */
-@keyframes text-glitch {
-  0% { transform: translate(0); opacity: 1; }
-  20% { transform: translate(-2px, 2px) skew(-1deg); opacity: 0.95; }
-  40% { transform: translate(2px, -2px) skew(1deg); opacity: 1; }
-  60% { transform: translate(-1px, -1px) skew(-1deg); opacity: 0.98; }
-  80% { transform: translate(1px, 1px) skew(1deg); opacity: 1; }
-  100% { transform: translate(0); opacity: 1; }
-}
-
-/* Apply Glitch Effect to Text */
-.glitch-text:hover {
-  animation: text-glitch 1.5s infinite ease-in-out alternate;
-}
-
-/* 💡 Pixelated Light Flicker Effect */
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.85; }
-  100% { opacity: 1; }
-}
-.flicker-effect:hover {
-  animation: flicker 1.5s infinite ease-in-out;
-}
-
-/* 🚀 Retro Pixel Button */
+/* 🚀 Professional Retro Pixel Button */
 .pixel-btn {
   font-family: 'VT323', monospace;
   background: linear-gradient(90deg, #7a1aff, #00d084);
   color: white;
-  padding: 12px 24px;
-  border-radius: 5px;
+  padding: 14px 26px;
+  border-radius: 8px;
   text-transform: uppercase;
-  font-size: 1.3rem;
-  transition: all 0.3s ease-in-out;
+  font-size: 1.4rem;
   border: 3px solid #7a1aff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px var(--gradient-mid);
+  position: relative;
+  overflow: hidden;
 }
 
+/* 🎨 Button Glow Effect */
 .pixel-btn:hover {
   background: linear-gradient(90deg, #00d084, #7a1aff);
-  transform: scale(1.08);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 25px var(--gradient-end);
 }
 
-/* ✅ Navigation Bar Enhancements */
+/* ✅ Animated Navigation Bar */
 .navbar {
-  font-size: 1.5rem; /* ✅ Bigger font size */
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -138,27 +117,45 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-/* 🔥 Glitch Hover Effect */
+/* 🔥 Animated Floating Icon Effect */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-icon {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* ✅ Professional Navigation Link Effects */
 .navbar-link {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  color: white;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  padding: 10px 15px;
 }
 
+/* 🔥 Gradient Hover Effect */
 .navbar-link:hover {
   color: var(--gradient-start);
-  animation: text-glitch 0.8s infinite alternate;
-}
-
-/* 🔥 Neon Glow Effect on Hover */
-.navbar-link:hover {
   text-shadow: 0px 0px 10px var(--gradient-start), 0px 0px 18px var(--gradient-end);
+  transform: translateY(-2px);
 }
 
-/* 🔥 Expanding Underline Effect */
+/* 🎨 Expanding Underline Effect */
 .navbar-link::after {
   content: "";
   position: absolute;
@@ -173,6 +170,15 @@ html {
 .navbar-link:hover::after {
   width: 100%;
   left: 0;
+}
+
+/* 🌫️ Frosted Glass Effect */
+.frosted-glass {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ✅ Adjust Logo Size for Different Screens */
@@ -194,7 +200,8 @@ html {
     font-size: 1.1rem;
   }
 }
-/* Ensure body doesn't cut off sections */
+
+/* ✅ Ensuring the body doesn’t cut off sections */
 body {
-  padding-top: 100px; /* Adjust based on navbar height */
+  padding-top: 100px;
 }
