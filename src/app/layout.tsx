@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Head from "next/head"; // ✅ Import Head for SEO
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [showTopButton, setShowTopButton] = useState(false);
@@ -19,8 +20,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <head>
-        {/* ✅ Primary SEO Meta Tags */}
+      <Head>
+        {/* ✅ SEO & Meta Tags */}
         <title>SOLREWARD - Earn Passive SOL Rewards on Solana</title>
         <meta
           name="description"
@@ -38,11 +39,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ✅ Favicon & Branding */}
         <meta name="application-name" content="SOLREWARD" />
         <meta name="theme-color" content="#090909" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/Logo.png" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        {/* ✅ Open Graph / Facebook */}
+        {/* ✅ Open Graph / Facebook Meta */}
         <meta property="og:title" content="SOLREWARD - Earn Passive SOL Rewards" />
         <meta
           property="og:description"
@@ -52,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:url" content="https://solreward.com" />
         <meta property="og:type" content="website" />
 
-        {/* ✅ Twitter Card Data */}
+        {/* ✅ Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SOLREWARD - Earn SOL on Solana" />
         <meta
@@ -64,15 +66,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ✅ Canonical URL */}
         <link rel="canonical" href="https://solreward.com" />
 
-        {/* ✅ Google Site Verification (if needed) */}
+        {/* ✅ Google Site Verification (If needed) */}
         <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
-      </head>
+      </Head>
 
       <body className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white font-sans relative">
         {/* ✅ Navbar */}
         <Navbar />
 
-        {/* ✅ Main Content Wrapper */}
+        {/* ✅ Main Content */}
         <motion.main
           className="container mx-auto px-4 min-h-screen pt-20 relative z-10"
           initial={{ opacity: 0, y: 20 }}
@@ -85,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ✅ Footer */}
         <Footer />
 
-        {/* ✅ Back to Top Button - Ensures Visibility */}
+        {/* ✅ Back to Top Button */}
         {showTopButton && (
           <motion.button
             onClick={scrollToTop}

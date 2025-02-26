@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://solreward.com/sitemap.xml
