@@ -12,7 +12,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowStaticBanner(true);
-    }, 1200); // Adjust time to match GIF duration
+    }, 800); // Adjust time to match GIF duration
 
     return () => clearTimeout(timer);
   }, []);
