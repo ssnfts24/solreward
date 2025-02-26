@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
       </Head>
 
       <motion.div 
-        className="relative bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+        className="relative bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-6 py-12 overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -37,7 +37,7 @@ export default function HowItWorksPage() {
 
         {/* 🛠️ Page Heading */}
         <motion.h1 
-          className="text-4xl md:text-5xl font-extrabold text-center mb-6 bg-gradient-to-r from-green-400 via-purple-500 to-blue-400 bg-clip-text text-transparent drop-shadow-md"
+          className="text-4xl md:text-5xl font-extrabold text-center mb-8 bg-gradient-to-r from-green-400 via-purple-500 to-blue-400 bg-clip-text text-transparent drop-shadow-md"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.3 }}
@@ -47,7 +47,7 @@ export default function HowItWorksPage() {
 
         {/* 📜 Description */}
         <motion.p 
-          className="text-lg text-center max-w-2xl mb-8 text-gray-300 leading-relaxed"
+          className="text-lg text-center max-w-2xl mb-10 text-gray-300 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.5 }}
@@ -57,7 +57,7 @@ export default function HowItWorksPage() {
 
         {/* 🚀 Step-by-Step Guide */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl w-full"
           initial="hidden"
           animate="visible"
           variants={{
@@ -66,10 +66,10 @@ export default function HowItWorksPage() {
           }}
         >
           {[
-            { title: "Buy & Hold", desc: "Purchase SOLR tokens and store them securely in your wallet to start earning rewards." },
-            { title: "Earn Automatic Rewards", desc: "Holders receive **4% SOL reflections** instantly with every transaction." },
-            { title: "Liquidity Protection", desc: "**70% of liquidity is permanently locked** on Raydium for long-term stability." },
-            { title: "Staking & Future Utilities", desc: "**Stake SOLR** for additional APY rewards and unlock NFT-based utilities in future updates!" },
+            { title: "Buy & Hold", desc: "Purchase **SOLR tokens** and store them securely in your wallet to **start earning rewards instantly**." },
+            { title: "Earn Automatic Rewards", desc: "Holders receive **4% SOL reflections** instantly with **every transaction**." },
+            { title: "Liquidity Protection", desc: "To ensure long-term security, **70% of liquidity is permanently locked** on **Raydium**." },
+            { title: "Staking & Future Utilities", desc: "Stake **SOLR** to earn **extra APY rewards** and unlock **NFT-based utilities** in future updates." },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -79,7 +79,7 @@ export default function HowItWorksPage() {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <h3 className="text-2xl font-semibold bg-gradient-to-r from-green-400 via-purple-500 to-blue-400 bg-clip-text text-transparent mb-2">
+              <h3 className="text-2xl font-semibold bg-gradient-to-r from-green-400 via-purple-500 to-blue-400 bg-clip-text text-transparent mb-3">
                 <span className="text-gray-300">Step {index + 1}: </span>{item.title}
               </h3>
               <p className="text-gray-300">{item.desc}</p>
@@ -90,7 +90,7 @@ export default function HowItWorksPage() {
         {/* 🔥 Call to Action */}
         <motion.a
           href="/token-info"
-          className="mt-10 inline-block px-8 py-4 text-lg font-bold pixel-btn transition-all bg-gradient-to-r from-green-400 via-purple-500 to-blue-500 hover:scale-105 hover:shadow-lg"
+          className="mt-12 inline-block px-8 py-4 text-lg font-bold pixel-btn transition-all bg-gradient-to-r from-green-400 via-purple-500 to-blue-500 hover:scale-105 hover:shadow-lg"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >

@@ -1,10 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+SOLREWARD - Passive SOL Rewards on Solana
 
-## Getting Started
+This is the official SOLREWARD project, built using Next.js and designed to provide passive SOL reflections, staking rewards, and a secure ecosystem on Solana.
 
-First, run the development server:
+🚀 Getting Started
 
-```bash
+To start the development server, run:
+
 npm run dev
 # or
 yarn dev
@@ -12,25 +13,70 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🏗 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📂 solreward/
+├── 📂 app/               # Next.js application root
+│   ├── 📂 components/    # Reusable UI components
+│   ├── 📂 pages/         # Application pages
+│   ├── 📂 public/        # Static assets (logo, meta images, favicon, etc.)
+│   ├── 📂 styles/        # Tailwind CSS and global styles
+│   ├── layout.tsx       # Global layout
+│   ├── page.tsx         # Main entry page
+│   ├── _app.tsx         # App-level configuration
+│   └── _document.tsx    # Custom document structure
+├── 📂 server/            # API & backend logic (if applicable)
+├── 📜 README.md         # Project documentation
+├── 📜 next.config.js    # Next.js configuration
+├── 📜 tailwind.config.js # Tailwind CSS configuration
+├── 📜 package.json      # Dependencies and scripts
+└── 📜 .env.local        # Environment variables
 
-## Learn More
+🌟 Features
 
-To learn more about Next.js, take a look at the following resources:
+Automated SOL Reflections → Earn SOL automatically with every transaction.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Secure & Locked Liquidity → Ensures stability and prevents rug pulls.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Staking & Rewards → Earn additional rewards through staking.
 
-## Deploy on Vercel
+Deflationary Mechanisms → Automatic buyback & burn functions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Solana-Powered DeFi → Fast, low-cost transactions and on-chain governance.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🛠 Technologies Used
+
+Next.js → Modern React framework with SSR & API routes.
+
+Tailwind CSS → Custom, responsive styling.
+
+Framer Motion → Smooth animations & transitions.
+
+Solana Web3 → Blockchain integrations.
+
+🔍 Learn More
+
+For more details, visit:
+
+SOLREWARD Whitepaper
+
+Next.js Documentation
+
+Solana Developer Resources
+
+🌎 Deploy on Vercel
+
+Deploy your SOLREWARD app easily with Vercel.
+
+📩 Connect With Us
+
+Website: solreward.com
+
+Twitter: @solreward
+
+Discord: Coming soon
+
+🔥 Join the Future of Passive SOL Rewards! 🚀

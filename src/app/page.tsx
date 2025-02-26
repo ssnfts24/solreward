@@ -37,35 +37,40 @@ export default function Home() {
           content="Solana, Crypto, SOLREWARD, Staking, DeFi, Blockchain, Passive Income"
         />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="SOLREWARD - Earn Passive SOL Rewards on Solana" />
+        <meta
+          property="og:description"
+          content="Earn passive SOL rewards with SOLREWARD, the most secure & rewarding on-chain system on Solana."
+        />
+        <meta property="og:image" content="/Logo.png" />
+        <meta property="og:url" content="https://solreward.com/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SOLREWARD - Earn Passive SOL Rewards on Solana" />
+        <meta name="twitter:description" content="Trade and stake SOLREWARD (SOLR) for passive income." />
+        <meta name="twitter:image" content="/Logo.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* 🔥 Adjusted Background Overlay (Less Dark, Less Blur) */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0"></div>
-
       {/* ✅ Floating Background Effects */}
-      {[
-        { top: "10%", left: "5%", size: "w-16 h-16", delay: 0 },
-        { top: "25%", right: "10%", size: "w-32 h-32", delay: 0.3 },
-        { bottom: "15%", left: "15%", size: "w-24 h-24", delay: 0.6 },
-        { bottom: "30%", right: "5%", size: "w-20 h-20", delay: 0.9 },
-      ].map((light, index) => (
+      {[1, 2, 3, 4].map((index) => (
         <motion.div
           key={index}
-          className={`${light.size} absolute bg-green-400 opacity-15 rounded-full blur-xl animate-pulse`}
+          className="absolute rounded-full bg-gradient-to-r from-green-400 to-blue-500 opacity-10 blur-3xl"
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 0.3, scale: 1.2 }}
+          animate={{ opacity: 0.2, scale: 1.3 }}
           transition={{
             duration: 3,
             repeat: Infinity,
             repeatType: "reverse",
-            delay: light.delay,
+            delay: index * 0.5,
           }}
           style={{
-            top: light.top,
-            left: light.left,
-            right: light.right,
-            bottom: light.bottom,
+            width: `${60 + index * 10}px`,
+            height: `${60 + index * 10}px`,
+            top: `${index * 10}%`,
+            left: `${index % 2 === 0 ? "5%" : "auto"}`,
+            right: `${index % 2 === 1 ? "10%" : "auto"}`,
           }}
         />
       ))}
@@ -136,7 +141,7 @@ export default function Home() {
       {showTopButton && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:scale-110 transition-all duration-300"
+          className="fixed bottom-6 right-6 px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-full shadow-lg hover:scale-110 transition-all duration-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

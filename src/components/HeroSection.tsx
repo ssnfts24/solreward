@@ -1,30 +1,61 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
 
 export default function HeroSection() {
+  const [showStaticBanner, setShowStaticBanner] = useState(false);
+
+  // ✅ Switch from GIF to static image after 3 seconds (adjust as needed)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowStaticBanner(true);
+    }, 1500); // Adjust time to match GIF duration
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
+      {/* ✅ SEO & Meta Tags */}
       <Head>
+        {/* ✅ Primary Metadata */}
         <title>SOLREWARD | The Ultimate On-Chain Rewards for Solana</title>
         <meta 
           name="description" 
-          content="SOLREWARD is the ultimate on-chain rewards system on Solana. Earn passive SOL reflections and stake for rewards." 
+          content="SOLREWARD is the most rewarding on-chain staking and passive income system built on Solana. Earn automatic SOL reflections today." 
         />
-        <meta name="keywords" content="Solana, SOLREWARD, Crypto, Staking, DeFi, Passive Income, Liquidity, Rewards" />
+        <meta name="keywords" content="Solana, SOLREWARD, Crypto, Staking, DeFi, Passive Income, Blockchain, Liquidity, Rewards, Yield Farming" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="SOLREWARD | Earn Passive Rewards" />
+        <meta name="author" content="SOLREWARD Team" />
+
+        {/* ✅ Branding & Favicon */}
+        <meta name="application-name" content="SOLREWARD" />
+        <meta name="theme-color" content="#090909" />
+        <link rel="icon" href="/Logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/Logo.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* ✅ Open Graph (Facebook, LinkedIn) */}
+        <meta property="og:title" content="SOLREWARD | Earn Passive SOL Rewards" />
         <meta property="og:description" content="Stake and earn automatic SOL reflections on Solana with SOLREWARD." />
-        <meta property="og:image" content="https://solreward.com/meta-banner.png" />
+        <meta property="og:image" content="https://solreward.com/Logo.png" />
         <meta property="og:url" content="https://solreward.com" />
         <meta property="og:type" content="website" />
+
+        {/* ✅ Twitter Card Data */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SOLREWARD | Passive SOL Reflections" />
         <meta name="twitter:description" content="Hold SOLREWARD tokens and earn SOL rewards automatically." />
-        <meta name="twitter:image" content="https://solreward.com/meta-banner.png" />
+        <meta name="twitter:image" content="https://solreward.com/Logo.png" />
+
+        {/* ✅ Canonical URL */}
         <link rel="canonical" href="https://solreward.com" />
+
+        {/* ✅ Google Site Verification (If Needed) */}
+        <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
       </Head>
 
       <motion.section
@@ -33,28 +64,41 @@ export default function HeroSection() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* 🔥 Top Banner Image with Floating Animation */}
+        {/* 🔥 Banner Image (GIF on Load, Then Switches to Static Image) */}
         <motion.div
-          className="w-full max-w-[1200px] mb-8 rounded-lg overflow-hidden"
+          className="w-full max-w-[1200px] mb-8 rounded-lg overflow-hidden shadow-lg"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
-          whileHover={{ scale: 1.02 }} // ✅ Slight scaling on hover
         >
           <motion.div
             className="relative"
-            animate={{ y: [0, -5, 0] }} // ✅ Floating Animation
+            animate={{ y: [0, -5, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Image 
-              src="/Banner.png" // ✅ Ensure this is inside the `public/` folder
-              alt="SOLREWARD - Earn Passive SOL Rewards"
-              width={1200} 
-              height={300}
-              priority // ✅ Ensures the banner loads quickly
-              loading="eager"
-              className="w-full h-auto object-cover shadow-lg rounded-lg"
-            />
+            {showStaticBanner ? (
+              // ✅ Static Banner (After GIF plays)
+              <Image 
+                src="/Banner.png"
+                alt="SOLREWARD - Earn Passive SOL Rewards"
+                width={1200} 
+                height={400}
+                priority
+                loading="eager"
+                className="w-full h-auto object-cover shadow-2xl rounded-lg"
+              />
+            ) : (
+              // ✅ GIF Plays First
+              <Image 
+                src="/AnimatedBanner.gif"
+                alt="SOLREWARD - Earn Passive SOL Rewards"
+                width={1200} 
+                height={400}
+                priority
+                loading="eager"
+                className="w-full h-auto object-cover shadow-2xl rounded-lg"
+              />
+            )}
           </motion.div>
         </motion.div>
 
@@ -89,7 +133,7 @@ export default function HeroSection() {
           </motion.a>
         </motion.div>
 
-        {/* ⬇️ Scroll Down Indicator (Fixed for Visibility) */}
+        {/* ⬇️ Scroll Down Indicator */}
         <motion.div 
           className="absolute bottom-8 flex flex-col items-center"
           initial={{ opacity: 0, y: 10 }}

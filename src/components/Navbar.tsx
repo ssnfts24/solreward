@@ -40,16 +40,19 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex justify-between items-center px-6">
         
-        {/* 🔹 Logo Section */}
+        {/* 🔹 Logo Section with Animated GIF */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/Logo.png" // ✅ Ensure this is in the `/public/` folder
-            alt="SOLREWARD Logo"
-            width={60}
-            height={60}
-            priority
-            className="h-12 w-auto md:h-16 transition-transform duration-300 hover:scale-105"
-          />
+          <motion.div
+            className="h-12 w-auto md:h-16 transition-transform duration-300 hover:scale-105 animated-logo"
+          >
+            <Image
+              src="/animated-logo.gif" // ✅ Ensure this GIF is inside `/public/`
+              alt="SOLREWARD Logo"
+              width={60}
+              height={60}
+              priority
+            />
+          </motion.div>
           <span className="text-2xl md:text-3xl text-white font-bold tracking-widest pixel-hover">
             SOLREWARD
           </span>

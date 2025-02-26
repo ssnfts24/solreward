@@ -7,11 +7,23 @@ export default function WhitepaperPage() {
   return (
     <>
       <Head>
-        <title>📜 SOLREWARD Whitepaper - Learn Everything About SOLR</title>
-        <meta name="description" content="Explore the SOLREWARD Whitepaper - Discover our vision, tokenomics, and roadmap for passive SOL rewards on Solana." />
-        <meta name="keywords" content="Solana, Whitepaper, Crypto, Passive Income, Tokenomics, Staking, Blockchain, DeFi" />
+        <title>📜 SOLREWARD Whitepaper - Everything About SOLR</title>
+        <meta 
+          name="description" 
+          content="Read the SOLREWARD Whitepaper and learn about our vision, tokenomics, staking, and rewards system on the Solana blockchain." 
+        />
+        <meta name="keywords" content="Solana, SOLREWARD Whitepaper, Crypto, Passive Income, Staking, DeFi, Blockchain, Tokenomics" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="SOLREWARD Team" />
+        <meta property="og:title" content="📜 SOLREWARD Whitepaper - All About SOLR" />
+        <meta property="og:description" content="Discover SOLREWARD’s mission, tokenomics, and staking model in our official whitepaper." />
+        <meta property="og:image" content="https://solreward.com/meta-whitepaper.png" />
+        <meta property="og:url" content="https://solreward.com/whitepaper" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="📜 SOLREWARD Whitepaper" />
+        <meta name="twitter:description" content="Unlock the full potential of staking and passive rewards with SOLREWARD on Solana." />
+        <meta name="twitter:image" content="https://solreward.com/meta-whitepaper.png" />
         <link rel="canonical" href="https://solreward.com/whitepaper" />
       </Head>
 
@@ -22,7 +34,7 @@ export default function WhitepaperPage() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         {/* 🔹 Background Overlay Effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 pointer-events-none"></div>
 
         {/* 🔥 Page Heading */}
         <motion.h1 
@@ -31,7 +43,7 @@ export default function WhitepaperPage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
-          SOLREWARD Whitepaper
+          SOLREWARD Whitepaper 📜
         </motion.h1>
 
         {/* 🔷 Description Section */}
@@ -91,6 +103,15 @@ export default function WhitepaperPage() {
           style={{ willChange: "transform, opacity" }}
         ></motion.div>
 
+        {/* 🚀 Animated Spark Effect */}
+        <motion.div 
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.3, scale: 1 }}
+          transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse" }}
+        >
+          <div className="w-64 h-64 bg-gradient-to-r from-green-400 to-blue-500 opacity-10 rounded-full blur-[100px]"></div>
+        </motion.div>
       </motion.div>
     </>
   );
