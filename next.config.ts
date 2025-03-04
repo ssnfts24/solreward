@@ -18,12 +18,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // ✅ Ensure Static Exports Work on Netlify
-  output: "standalone",
-  trailingSlash: true,
-  experimental: {
-    appDir: true,
-  },
 };
 
 export default nextConfig;
