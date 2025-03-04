@@ -6,14 +6,20 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# ✅ Ensure correct headers for sitemap.xml
+# ✅ Serve Sitemap Correctly
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# ✅ Security Headers (Recommended for Best Practices)
+# ✅ Security Headers (Recommended)
 [[headers]]
   for = "/*"
   [headers.values]
