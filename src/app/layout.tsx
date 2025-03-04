@@ -66,6 +66,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ✅ Canonical URL */}
         <link rel="canonical" href="https://solreward.com" />
 
+        {/* ✅ Sitemap Reference for SEO */}
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
         {/* ✅ Google Site Verification (If needed) */}
         <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
       </Head>
