@@ -30,25 +30,31 @@ export default function Home() {
         <title>SOLREWARD - Earn Passive SOL Rewards on Solana</title>
         <meta
           name="description"
-          content="Earn passive SOL rewards with SOLREWARD, the most secure & rewarding on-chain system on Solana."
+          content="Join SOLREWARD and earn passive SOL rewards effortlessly. A secure, decentralized staking platform built on Solana."
         />
         <meta
           name="keywords"
-          content="Solana, Crypto, SOLREWARD, Staking, DeFi, Blockchain, Passive Income"
+          content="Solana, Crypto, SOLREWARD, Staking, DeFi, Blockchain, Passive Income, Web3"
         />
         <meta name="robots" content="index, follow" />
+        
+        {/* ✅ Sitemap Reference for Search Engines */}
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://solreward.com/sitemap.xml" />
+
+        {/* ✅ Open Graph / Facebook Meta */}
         <meta property="og:title" content="SOLREWARD - Earn Passive SOL Rewards on Solana" />
-        <meta
-          property="og:description"
-          content="Earn passive SOL rewards with SOLREWARD, the most secure & rewarding on-chain system on Solana."
-        />
-        <meta property="og:image" content="/Logo.png" />
+        <meta property="og:description" content="Join SOLREWARD and earn passive SOL rewards effortlessly." />
+        <meta property="og:image" content="https://solreward.com/meta-image.png" />
         <meta property="og:url" content="https://solreward.com/" />
         <meta property="og:type" content="website" />
+
+        {/* ✅ Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SOLREWARD - Earn Passive SOL Rewards on Solana" />
-        <meta name="twitter:description" content="Trade and stake SOLREWARD (SOLR) for passive income." />
-        <meta name="twitter:image" content="/Logo.png" />
+        <meta name="twitter:description" content="Stake SOLREWARD (SOLR) and earn passive income securely." />
+        <meta name="twitter:image" content="https://solreward.com/meta-image.png" />
+
+        {/* ✅ Favicon */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
