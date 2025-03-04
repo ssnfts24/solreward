@@ -6,13 +6,7 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# ✅ Ensure the sitemap is served correctly
-[[redirects]]
-  from = "/sitemap.xml"
-  to = "/public/sitemap.xml"
-  status = 200
-  force = true
-
+# ✅ Ensure correct headers for sitemap.xml
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
